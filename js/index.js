@@ -25,7 +25,7 @@ const apiKey = 'b6a84c3c92b24a1897b182154242206';
 
 async function searchCity(cityName) {
     try {
-        const searchUrl = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${cityName}&days=3`;
+        const searchUrl = `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${cityName}&days=3`;
         const response = await fetch(searchUrl);
         const searchData = await response.json();
 
@@ -44,7 +44,7 @@ async function searchCity(cityName) {
 
 async function getCurrentWeather(city) {
     try {
-        const weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city.name},${city.region}&days=3`;
+        const weatherUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city.name},${city.region}&days=3`;
         const response = await fetch(weatherUrl);
         const weatherData = await response.json();
         return weatherData;
